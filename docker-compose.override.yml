@@ -7,7 +7,9 @@ services:
       - ACCEPT_EULA=Y
       - MSSQL_SA_PASSWORD=Password12345.
    volumes:
-      - sqlserver_volume :var/opt/sqlserver
+      - sqlserver_volume:/var/opt/sqlserver
+   ports:
+      - "1443:1443"
   microservice1.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
